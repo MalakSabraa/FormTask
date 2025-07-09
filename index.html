@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Form</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <h2>Registration Form</h2>
+    <p id="successMessage" style="color: green; display: center; font-weight: bold;">
+       Thank you for filling the form!
+    </p>
+    <form id="registrationForm">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        pattern="^[A-Za-z\s]+$"
+        title="Name must not contain numbers."
+    />
+
+      <label for="phonenumber">Phone Number:</label>
+      <input type="number" id="phonenumber" name="phonenumber" required />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+        title="Please enter a valid email address."
+      />
+
+
+      <label for="password">Password:</label>
+      <div class="password-container">
+      <input
+        type="password"
+        id="password"
+        name="password"
+        required
+        pattern=".{8,}"
+        title="Password must be at least 8 characters long."
+      />
+      </div>
+
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required />
+
+      <label>Date of Birth:</label>
+      <div class="dob-selects">
+      <select id="dob-day"></select>
+      <select id="dob-month" required>
+        <option value="">Month</option>
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+      <select id="dob-year"></select>
+      </div>
+
+      <label for="country">Country:</label>
+      <select id="country" name="country" required>
+        <option value="">Select Country</option>
+        <option value="Egypt">Egypt</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <option value="Canada">Canada</option>
+        <option value="Germany">Germany</option>
+        <option value="Saudi Arabia">Saudi Arabia</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+ 
+  <script src="dist/script.js"></script>
+</body>
+</html>
